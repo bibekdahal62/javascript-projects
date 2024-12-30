@@ -60,16 +60,7 @@ boxes.forEach(box =>{
 });
 
 
-resetGame.addEventListener("click", () => {
-    boxes.forEach(box => {
-        box.innerText = "";
-        box.disabled = false;
-    });
-    turnO = true;
-});
-
-
-newGame.addEventListener("click", () => {
+const reset = () => {
     boxes.forEach(box => {
         box.innerText = "";
         box.disabled = false;
@@ -77,6 +68,10 @@ newGame.addEventListener("click", () => {
     turnO = true;
     winMessage.style.display = "none";
     resetGame.style.display = "block";
-});
+}
+
+resetGame.addEventListener("click", reset);
+
+newGame.addEventListener("click", reset);
 
 
