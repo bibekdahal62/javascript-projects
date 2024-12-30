@@ -4,6 +4,7 @@ let winMessage = document.querySelector(".win-message");
 let newGame = document.querySelector("#new-game");
 
 let turnO = true;
+let drawPoint = 0;
 
 const winningPattern = [
     [0, 1, 2],
@@ -33,12 +34,21 @@ const checkWinner = () => {
             if(pos1 === pos2 && pos2 === pos3 && pos1 === pos3){
 
                 showWinner(pos1);
-               
                 boxes.forEach(box => {
                     box.disabled = true;
                 });
             }
         }
+    }
+}
+
+
+const checkIsDraw = () => {
+    if(drawPoint === 9){
+        resetGame.classList.add("hidden");
+        winMessage.firstElementChild.innerText = `Game is draw.`;
+        winMessage.classList.remove("hidden");
+        drawPoint = 0;
     }
 }
 
@@ -55,7 +65,9 @@ boxes.forEach(box =>{
         }
         box.disabled = true;
 
+        drawPoint++;
         checkWinner();
+        checkIsDraw();
     });
 });
 
@@ -66,7 +78,9 @@ const reset = () => {
         box.classList.remove("color");
         box.disabled = false;
     });
+
     turnO = true;
+    drawPoint = 0;
     winMessage.classList.add("hidden");
     resetGame.classList.remove("hidden");
 }
