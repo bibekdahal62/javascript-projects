@@ -13,6 +13,11 @@ main{
     margin-top: 30px;
 }
 
+h1{
+    font-size: 80px;
+    text-shadow: 3px 3px 15px white;
+}
+
 .container{
     height: 70vh;
     display: flex;
@@ -38,19 +43,26 @@ main{
     background-color: rgb(79, 167, 167);
     font-size: 100px;
     color: brown;
+    box-shadow: 3px 3px 5px rgb(250, 161, 161);
 }
 .button{
     height: 50px;
     width: 140px;
+    margin-top: 20px;
     border: none;
     border-radius: 15px;
     background-color: rgb(79, 167, 167);
     font-size: 20px;
-    box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.7);
+    box-shadow: 3px 3px 5px white;
 }
 
-.win-message h2{
-    margin-bottom: 20px;
+.win-message{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .color{
