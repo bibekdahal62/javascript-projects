@@ -16,11 +16,10 @@ const winningPattern = [
     [2, 4, 6]
 ];
 
-
 const showWinner = (winner) => {
-    resetGame.style.display = "none";
+    resetGame.classList.add("hidden");
     winMessage.firstElementChild.innerText = `Player${winner} wins`;
-    winMessage.style.display = "block";
+    winMessage.classList.remove("hidden");
 }
 
 
@@ -48,6 +47,7 @@ boxes.forEach(box =>{
     box.addEventListener("click", () => {
         if(turnO){
             box.innerText = "O";
+            box.classList.add("color");
             turnO = false;
         }else{
             box.innerText = "X";
@@ -63,11 +63,12 @@ boxes.forEach(box =>{
 const reset = () => {
     boxes.forEach(box => {
         box.innerText = "";
+        box.classList.remove("color");
         box.disabled = false;
     });
     turnO = true;
-    winMessage.style.display = "none";
-    resetGame.style.display = "block";
+    winMessage.classList.add("hidden");
+    resetGame.classList.remove("hidden");
 }
 
 resetGame.addEventListener("click", reset);
