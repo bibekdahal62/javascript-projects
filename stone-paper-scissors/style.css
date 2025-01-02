@@ -74,12 +74,5 @@ body{
     background-color: rgb(58, 58, 58);
     color: azure;
     border-radius: 20px;
-}
-
-.bg-color-red{
-    background-color: red;
-}
-
-.bg-color-green{
-    background-color: green;
+    display: block;
 }

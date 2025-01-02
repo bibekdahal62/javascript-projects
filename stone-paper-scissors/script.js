@@ -2,6 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 const choices = document.querySelectorAll(".choice");
+let message = document.querySelector("#message");
 
 const genComputerChoice = () => {
     const options = ["rock", "paper", "scissors"];
@@ -10,39 +11,56 @@ const genComputerChoice = () => {
 }
 
 const gameDraw = () => {
-    console.log("Game is draw");
+    message.innerText = "Game was draw. Play again..";
+    message.style.backgroundColor = "rgb(58, 58, 58)";
 }
 
-const showWinner = (userWin) => {
-    if(userWin)
-        console.log('user wins');
-    else if(!userWin)
-        console.log('computer wins'); 
+const playerWins = (playerChoice, computerChoice) => {
+    playerScore++;
+    document.querySelector("#player").innerText = playerScore;
+    message.innerText = `You win. ${playerChoice} beats ${computerChoice}`;
+    message.style.backgroundColor = "green";
 }
 
-const playGame= (userChoice) => {
-    console.log("User choice is ", userChoice);
+const computerWins = (playerChoice, computerChoice) => {
+    computerScore++;
+    document.querySelector("#computer").innerText = computerScore;
+    message.innerText = `You lost. ${computerChoice} beats ${playerChoice}`;
+    message.style.backgroundColor = "red";
+}
+
+const showWinner = (playerWin, playerChoice, computerChoice) => {
+    if(playerWin){
+        playerWins(playerChoice, computerChoice);
+    }
+    else{
+        computerWins(playerChoice, computerChoice);
+    }
+}
+
+const playGame= (playerChoice) => {
+    console.log("User choice is ", playerChoice);
     let computerChoice = genComputerChoice();
     console.log("Computer choice is ",computerChoice);
 
-    if(userChoice === computerChoice){
+    if(playerChoice === computerChoice){
         gameDraw();
     }else{
-        let userWin = true;
-        if(userChoice === 'rock'){
-            userWin = (computerChoice === 'paper') ? false : true;
-        }else if(userChoice === 'paper'){
-            userWin = (computerChoice === 'scissors') ? false : true;
-        }else if(userChoice === 'scissors'){
-            userWin = (computerChoice === 'rock') ? false : true;
+        let playerWin = true;
+        if(playerChoice === 'rock'){
+            playerWin = (computerChoice === 'paper') ? false : true;
+        }else if(playerChoice === 'paper'){
+            playerWin = (computerChoice === 'scissors') ? false : true;
+        }else{
+            playerWin = (computerChoice === 'rock') ? false : true;
         }
-        showWinner(userWin);
+        showWinner(playerWin, playerChoice, computerChoice);
     }
 }
 
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
-        const userChoice = choice.getAttribute("id");
-        playGame(userChoice);
+        const playerChoice = choice.getAttribute("id");
+        playGame(playerChoice);
     });
 });
