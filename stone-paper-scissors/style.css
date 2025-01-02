@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: burlywood;
+}
+
+.heading{
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    background-color: rgb(58, 58, 58);
+    color: rgb(218, 200, 184);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.choices{
+    display: flex;
+    gap: 150px;
+    align-content: center;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+    padding: 30px;
+}
+
+.choices .choice{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choices .choice:hover{
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.choices .choice img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+.score-board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 300px;
+    font-size: 2rem;
+    font-family: 'Courier New';
+    padding: 30px;
+}
+
+.score-board .score{
+    text-align: center;
+}
+
+.message-box{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.message-box #message{
+    padding: 20px;
+    font-size: 2rem;
+    font-family: 'Courier New';
+    background-color: rgb(58, 58, 58);
+    color: azure;
+    border-radius: 20px;
+}
+
+.bg-color-red{
+    background-color: red;
+}
+
+.bg-color-green{
+    background-color: green;
+}
