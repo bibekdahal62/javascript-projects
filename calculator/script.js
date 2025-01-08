@@ -53,7 +53,7 @@ buttons.forEach((button) => {
             updateDisplay(displayValue);
         }
 
-        if(['+', '-', '*', '?'].includes(value)){
+        if(['+', '-', '*', '/'].includes(value)){
             if(firstOperand == null){
                 firstOperand = Number(displayValue);
             } else if(operator){
