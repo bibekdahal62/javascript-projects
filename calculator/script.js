@@ -81,7 +81,7 @@ buttons.forEach((button) => {
 
         if(value === 'B'){
             displayValue = displayValue.slice(0, -1);
-            updateDisplay(displayValue);
+            updateDisplay(displayValue || 0);
         }
     });
 });
