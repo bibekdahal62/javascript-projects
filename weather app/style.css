@@ -1,0 +1,39 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(221, 137, 107);
+}
+
+.container{
+    border: 1px solid lightgray;
+    border-radius: 1.2rem;
+    height: 40rem;
+    width: 40rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+form input, form button{
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+    border-radius: 0.3rem;
+    border: 1px solid lightgray;
+    background-color: rgb(204, 204, 204);
+    outline: none;
+}
+
+.location-info label{
+    font-size: 1.5rem;
+
+}
