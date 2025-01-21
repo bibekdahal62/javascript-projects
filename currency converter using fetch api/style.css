@@ -72,7 +72,7 @@ background-color: #dcdcdc;
     width: auto;
 }
 
-.dropdown i{
+.dropdown .fa-solid{
     font-size: 1.6rem;
     margin-top: 1.5rem;
 }
