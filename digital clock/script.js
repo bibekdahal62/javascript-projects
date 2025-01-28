@@ -8,31 +8,30 @@ const monthNames = [
 ];
 
 let isVisible = true
-let currentTime = new Date()
-let dayIndex = currentTime.getDay()
-let day = dayNames[dayIndex]
-let year = String(currentTime.getFullYear())
-let monthIndex = currentTime.getMonth();
-let month = monthNames[monthIndex]
-let date = currentTime.getDate()
-
 
 function updateClock() {
+    let currentTime = new Date()
     let hour = String(currentTime.getHours()).padStart(2, "0");
     let minute = String(currentTime.getMinutes()).padStart(2, "0");
-    clockElement.innerHTML = `${hour}:${minute} AM`
-    return (`${hour}:${minute} AM`)
+    let second = String(currentTime.getSeconds()).padStart(2, "0");
+    clockElement.innerHTML = `${hour} ${minute} ${second}`
+    let dayIndex = currentTime.getDay()
+    let day = dayNames[dayIndex]
+    let year = String(currentTime.getFullYear())
+    let monthIndex = currentTime.getMonth();
+    let month = monthNames[monthIndex]
+    let date = currentTime.getDate()
+    dayElement.innerHTML = day + "&nbsp;&nbsp;&nbsp;" + month + "&nbsp;&nbsp;" + date + "&nbsp;&nbsp;" + year
+    return (`${hour}:${minute}:${second}`)
 }
-
-dayElement.innerHTML = day + "&nbsp;&nbsp;&nbsp;" + month + "&nbsp;&nbsp;" + date + "&nbsp;&nbsp;" + year
 updateClock()
 
 setInterval(() => {
-    const currentTime = updateClock()
+    const currentTimes = updateClock()
     if (isVisible) {
-        clockElement.innerHTML = currentTime
+        clockElement.innerHTML = currentTimes
     } else {
-        let currentTimeUpdated = currentTime.replace(":", "&nbsp;")
+        let currentTimeUpdated = currentTimes.replaceAll(":", "&nbsp;")
         clockElement.innerHTML = currentTimeUpdated
     }
     isVisible = !isVisible
