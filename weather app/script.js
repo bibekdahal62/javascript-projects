@@ -48,7 +48,7 @@ function convertFtoC(fahrenheit) {
 
 async function getWeatherData(locationKey){
     try{
-        let url = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey=hAaC4OdINFttAoOMJZg8h6WJZGEiQfcT`
+        let url = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey={enter your api key here}`
         let weatherResponse = await fetch(url);
         if(!weatherResponse.ok){
             throw new Error("Error while fetching weather data..");

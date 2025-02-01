@@ -1,4 +1,4 @@
-const URL = "https://v6.exchangerate-api.com/v6/f329cda4e083183153de9331/latest/USD";
+const URL = "https://v6.exchangerate-api.com/v6/{Enter your api key here}/latest/USD";
 
 let dropdown = document.querySelectorAll(".dropdown select");
 let button = document.querySelector("form button");
